@@ -8,39 +8,34 @@
 // These are the colors apps are can override. We define the defaults here and
 // define variables for them in _colors.scss
 
-@use 'sass:color';
-@use 'settings' as *;
-@use 'functions' as *;
-@use 'palette' as *;
-
-// Using too many transparent colors in GTK3 can be performance heavy
-// and cause issues with some elements since we use a lot of color mixes.
-// Let's use static colors on more common elements
-$_fg_color: #323233; // Similar to rgba(0,0,6,0.8) on the background #fafafb
-$_text_color: #333334; // Similar to rgba(0,0,6,0.8) on the background #ffffff
-$_hb_fg_color: #2f2f30; // Similar to rgba(0,0,6,0.8) on the background #ebebed
+@use "sass:color";
+@use "sass:meta";
+@use "settings" as *;
+@use "functions" as *;
+@use "palette" as *;
+@use "dark_colors" as *;
 
 // The main accent color and the matching text value
-@define-color accent_bg_color @blue_3;
-@define-color accent_fg_color white;
+@define-color accent_bg_color #{"" + $accent_blue};
+@define-color accent_fg_color $fg;
 
 // destructive-action buttons
 @define-color destructive_bg_color #{if($variant == 'light', '@red_3', '@red_4')};
-@define-color destructive_fg_color white;
+@define-color destructive_fg_color $fg;
 
 // Levelbars, entries, labels and infobars. These don't need text colors
 @define-color success_bg_color #{if($variant == 'light', '@green_4', '@green_5')};
-@define-color success_fg_color white;
+@define-color success_fg_color $fg;
 
 @define-color warning_bg_color #{if($variant == 'light', '@yellow_5', "#c01c28")};
 @define-color warning_fg_color rgba(0,0,0,0.8);
 
 @define-color error_bg_color #{if($variant == 'light', '@red_3', '@red_4')};
-@define-color error_fg_color white;
+@define-color error_fg_color $fg;
 
 // Colors derived from their matching bg color
 // Not quite the same as libadwaita but "close enough"
-@if $variant == 'light' {
+@if $variant == "light" {
   @define-color accent_color #{gtkmix('@accent_bg_color', black, 83%)};
   @define-color destructive_color #{gtkmix('@destructive_bg_color', black, 83%)};
   @define-color success_color #{gtkmix('@success_bg_color', black, 83%)};
@@ -55,50 +50,63 @@ $_hb_fg_color: #2f2f30; // Similar to rgba(0,0,6,0.8) on the background #ebebed
 }
 
 // Window
-@define-color window_bg_color #{if($variant == 'light', '#fafafb', '#222226')};
-@define-color window_fg_color #{if($variant == 'light', $_fg_color, 'white')};
+@define-color window_bg_color #{"" + $theme_window_bg_color};
+@define-color window_fg_color #{"" + $theme_window_fg_color};
 
-// Views - e.g. text view or tree view
-@define-color view_bg_color #{if($variant == 'light', '#ffffff', '#1d1d20')};
-@define-color view_fg_color #{if($variant == 'light', $_text_color, 'white')};
+@define-color view_fg_color #{"" + $theme_view_bg_color};
+@define-color view_bg_color #{"" + $theme_view_fg_color};
 
 // Header bar, search bar, tab bar
-@define-color headerbar_bg_color #{if($variant == 'light', '#ebebed', '#2e2e32')};
-@define-color headerbar_fg_color #{if($variant == 'light', $_hb_fg_color, 'white')};
-@define-color headerbar_border_color #{if($variant == 'light', rgba(0,0,6,0.8), 'white')};
+@define-color headerbar_bg_color #{"" + $theme_headerbar_bg_color};
+@define-color headerbar_fg_color #{"" + $theme_headerbar_fg_color};
+@define-color headerbar_border_color #{"" + $theme_headerbar_border_color};
 @define-color headerbar_backdrop_color @window_bg_color;
-@define-color headerbar_shade_color #{if($variant == 'light', rgba(0,0,6,0.12), rgba(0,0,6,0.36))};
-@define-color headerbar_darker_shade_color #{if($variant == 'light', rgba(0,0,6,0.12), rgba(0,0,12,0.9))};
+@define-color headerbar_shade_color #{"" + $theme_headerbar_shade_color};
+@define-color headerbar_darker_shade_color #{"" + $theme_headerbar_darker_shade_color};
 
 // Split pane views
-@define-color sidebar_bg_color #{if($variant == 'light', '#ebebed', '#2e2e32')};
-@define-color sidebar_fg_color #{if($variant == 'light', $_hb_fg_color, 'white')};
-@define-color sidebar_backdrop_color #{if($variant == 'light', '#f2f2f4', '#28282c')};
-@define-color sidebar_shade_color #{if($variant == 'light', rgba(0,0,6,0.07), rgba(0,0,6,0.25))};
-@define-color sidebar_border_color #{if($variant == 'light', rgba(0,0,6,0.07), rgba(0,0,6,0.36))};
-
+@define-color sidebar_bg_color #{"" + $theme_sidebar_bg_color};
+@define-color sidebar_fg_color #{"" + $theme_sidebar_fg_color};
+@define-color sidebar_backdrop_color #{"" + $theme_sidebar_backdrop_color};
+@define-color sidebar_shade_color #{"" + $theme_sidebar_shade_color};
+@define-color sidebar_border_color #{"" + $theme_sidebar_border_color};
+@define-color secondary_sidebar_bg_color #{"" + $theme_secondary_sidebar_bg_color};
+@define-color secondary_sidebar_fg_color #{"" + $theme_secondary_sidebar_fg_color};
+@define-color secondary_sidebar_backdrop_color #{"" + $theme_secondary_sidebar_backdrop_color};
+@define-color secondary_sidebar_shade_color #{"" + $theme_secondary_sidebar_shade_color};
+@define-color secondary_sidebar_border_color #{"" + $theme_secondary_sidebar_border_color};
 // Cards, boxed lists
-@define-color card_bg_color #{if($variant == 'light', '#ffffff', rgba(255,255,255,0.08))};
-@define-color card_fg_color #{if($variant == 'light', $_text_color, 'white')};
-@define-color card_shade_color #{if($variant == 'light', rgba(0,0,6,0.07), rgba(0,0,6,0.36))};
+@define-color card_bg_color #{"" + $theme_card_bg_color};
+@define-color card_fg_color #{"" + $theme_card_fg_color};
+@define-color card_shade_color #{"" + $theme_card_shade_color};
 
 // Dialogs
-@define-color dialog_bg_color #{if($variant == 'light', '#fafafb', '#36363a')};
-@define-color dialog_fg_color #{if($variant == 'light', $_fg_color, 'white')};
+@define-color dialog_bg_color #{"" + $theme_dialog_bg_color};
+@define-color dialog_fg_color #{"" + $theme_dialog_fg_color};
 
 // Popovers
-@define-color popover_bg_color #{if($variant == 'light', '#ffffff', '#36363a')};
-@define-color popover_fg_color #{if($variant == 'light', $_text_color, 'white')};
-@define-color popover_shade_color #{if($variant == 'light', rgba(0,0,6,0.07), rgba(0,0,6,0.25))};
+@define-color popover_bg_color #{"" + $theme_popover_bg_color};
+@define-color popover_fg_color #{"" + $theme_popover_fg_color};
+@define-color popover_shade_color #{"" + $theme_popover_shade_color};
 
 // Thumbnails
-@define-color thumbnail_bg_color #{if($variant == 'light', '#ffffff', '#39393d')};
-@define-color thumbnail_fg_color #{if($variant == 'light', $_text_color, 'white')};
+@define-color thumbnail_bg_color #{"" + $theme_thumbnail_bg_color};
+@define-color thumbnail_fg_color #{"" + $theme_thumbnail_fg_color};
 
 // Miscellaneous
-@define-color shade_color #{if($variant == 'light', rgba(0,0,6,0.07), rgba(0,0,6,0.25))};
-@define-color scrollbar_outline_color #{if($variant == 'light', 'white', rgba(0,0,12,0.95))};
-
+@define-color shade_color #{"" + $theme_shade_color};
+@define-color scrollbar_outline_color #{"" + $theme_scrollbar_outline_color};
 // XFCE
-@define-color panel_bg_color black;
-@define-color panel_fg_color white;
+@define-color panel_bg_color #{"" + $panel_bg_color};
+@define-color panel_fg_color #{"" + $panel_fg_color};
+
+// Use the variables in the GTK color definitions
+@define-color accent_blue #{$accent_blue};
+@define-color accent_teal #{$accent_teal};
+@define-color accent_green #{$accent_green};
+@define-color accent_yellow #{$accent_yellow};
+@define-color accent_orange #{$accent_orange};
+@define-color accent_red #{$accent_red};
+@define-color accent_pink #{$accent_pink};
+@define-color accent_purple #{$accent_purple};
+@define-color accent_slate #{$accent_slate};

@@ -1,23 +1,20 @@
 // Tweaks for the gtk-4.0 theme
 // These fixes are not for libadwaita apps
 
-@use '../functions' as *;
-@use '../settings' as *;
-
-// https://github.com/lassekongo83/adw-gtk3/issues/272
-@define-color accent_bg_color @blue_3;
-@define-color accent_fg_color white;
+@use "../functions" as *;
+@use "../settings" as *;
+@use "../defaults" as *;
 
 :root {
-  --accent-blue: #3584e4;
-  --accent-teal: #2190a4;
-  --accent-green: #3a944a;
-  --accent-yellow: #c88800;
-  --accent-orange: #ed5b00;
-  --accent-red: #e62d42;
-  --accent-pink: #d56199;
-  --accent-purple: #9141ac;
-  --accent-slate: #6f8396;
+  --accent-blue: @accent_blue;
+  --accent-teal: @accent_teal;
+  --accent-green: @accent_green;
+  --accent-yellow: @accent_yellow;
+  --accent-orange: @accent_orange;
+  --accent-red: @accent_red;
+  --accent-pink: @accent_pink;
+  --accent-purple: @accent_purple;
+  --accent-slate: @accent_slate;
 
   --accent-bg-color: var(--accent-blue);
   --accent-fg-color: @accent_fg_color;
@@ -34,8 +31,13 @@ notebook > header {
 
 // Better osd
 .osd {
-  &, button { border-radius: 24px; }
-  button { margin: 2px; }
+  &,
+  button {
+    border-radius: 24px;
+  }
+  button {
+    margin: 2px;
+  }
 }
 
 // Default decoration window controls
@@ -44,14 +46,19 @@ headerbar {
   &.default-decoration windowcontrols {
     > button {
       margin: 0 1px;
-      > image { padding: 4px; } // Make sure they have the same size
+      > image {
+        padding: 4px;
+      } // Make sure they have the same size
     }
 
-    &.start { margin-left: 3px; }
-    &.end { margin-right: 3px; }
+    &.start {
+      margin-left: 3px;
+    }
+    &.end {
+      margin-right: 3px;
+    }
   }
 }
-
 
 // ******
 // Apps *
@@ -61,10 +68,15 @@ headerbar {
 .background.chromium {
   $chr_dark_bg: gtkshade(var(--headerbar-bg-color), 1.2);
   // Will crash the browser if mixed with any color that is transparent!
-  background-color: if($variant == 'light', var(--window-bg-color), $chr_dark_bg);
+  background-color: if(
+    $variant == "light",
+    var(--window-bg-color),
+    $chr_dark_bg
+  );
 
   selection {
-    &, &:focus {
+    &,
+    &:focus {
       background-color: var(--accent-bg-color);
       color: var(--accent-fg-color);
     }
@@ -78,8 +90,12 @@ headerbar {
     border-radius: 100%;
     margin: 0 4px; // doesn't work on the far edges of the tab-bar
     transition: background 200ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    &:hover { background-color: color-mix(in srgb, currentColor 15%, transparent); }
-    &:active { background-color: color-mix(in srgb, currentColor 30%, transparent); }
+    &:hover {
+      background-color: color-mix(in srgb, currentColor 15%, transparent);
+    }
+    &:active {
+      background-color: color-mix(in srgb, currentColor 30%, transparent);
+    }
   }
 }
 
@@ -87,4 +103,3 @@ headerbar {
 tooltip.background.chromium {
   background-color: RGB(0 0 6 / 80%);
 }
-

@@ -68,6 +68,17 @@ libadwaita_tweaks_target = custom_target('generate_libadwaita_tweaks_css',
   depend_files: sass_depend_files
 )
 
+gtk_theme_target = custom_target('generate_gtk_themeee',
+  input: '../sass/gtk4/gtk4-light.scss',
+  output: 'gtk4.css',
+  command: [sass, '--no-source-map', '@INPUT@', '@OUTPUT@'],
+  build_by_default: true,
+  install: true,
+  install_dir: gtk4_dir,
+  depend_files: sass_depend_files
+)
+
+
 install_data(gtk4_css, install_dir: gtk4_dir)
 install_data(gtk4_assets, install_dir: gtk4_asset_dir)
 

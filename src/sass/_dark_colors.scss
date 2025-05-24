@@ -1,0 +1,174 @@
+@use "sass:color";
+@use "settings" as *;
+
+$bg: #282828;
+$red-dark: #cc241d; /* Labelled 'red' in the top color row */
+$green-dark: #98971a; /* Labelled 'green' in the top color row */
+$yellow-dark: #d79921; /* Labelled 'yellow' in the top color row */
+$blue-dark: #458588; /* Labelled 'blue' in the top color row */
+$purple-dark: #b16286; /* Labelled 'purple' in the top color row */
+$aqua-dark: #689d6a; /* Labelled 'aqua' in the top color row */
+$gray-1: #a89984; /* Labelled 'gray' in the top color row, also 'fg4' */
+
+/* Second row colors from the image */
+$gray-2: #928374; /* Labelled 'gray' in the second color row */
+$red-light: #fb4934; /* Labelled 'red' in the second color row */
+$green-light: #b8bb26; /* Labelled 'green' in the second color row */
+$yellow-light: #fabd2f; /* Labelled 'yellow' in the second color row */
+$blue-light: #83a598; /* Labelled 'blue' in the second color row */
+$purple-light: #d3869b; /* Labelled 'purple' in the second color row */
+$aqua-light: #8ec07c; /* Labelled 'aqua' in the second color row */
+$fg: #ebdbb2; /* Labelled 'fg', also 'fg1' */
+
+/* Third row / background variants from the image */
+$bg0-h: #1d2021; /* Labelled 'bg0_h' */
+$bg0: #282828; /* Labelled 'bg0', same hex as $bg */
+$bg1: #3c3836; /* Labelled 'bg1' */
+$bg2: #504945; /* Labelled 'bg2' */
+$bg3: #665c54; /* Labelled 'bg3' */
+$bg4: #7c6f64; /* Labelled 'bg4' */
+$gray-3: #928374; /* Labelled 'gray' next to bg4, same hex as $gray-2 */
+$orange-dark: #d65d0e; /* Labelled 'orange' in the third row */
+
+/* Fourth row / foreground variants from the image */
+$bg0-s: #32302f; /* Labelled 'bg0_s' */
+$fg4: #a89984; /* Labelled 'fg4', same hex as $gray-1 */
+$fg3: #bdae93; /* Labelled 'fg3' */
+$fg2: #d5c4a1; /* Labelled 'fg2' */
+$fg1: #ebdbb2; /* Labelled 'fg1', same hex as $fg */
+$fg0: #fbf1c7; /* Labelled 'fg0' */
+$orange-light: #fe8019; /* Labelled 'orange' in the fourth row */
+
+@if $variant == "light" {
+  /* Original Top Row Names -> New Palette Top Row Values */
+  $bg: #fbf1c7; /* Was #282828, now 'bg' from light palette */
+  $red-dark: #cc241d; /* 'red' from light palette top row */
+  $green-dark: #98971a; /* 'green' from light palette top row */
+  $yellow-dark: #d79921; /* 'yellow' from light palette top row */
+  $blue-dark: #458588; /* 'blue' from light palette top row */
+  $purple-dark: #b16286; /* 'purple' from light palette top row */
+  $aqua-dark: #689d6a; /* 'aqua' from light palette top row */
+  $gray-1: #7c6f64; /* 'gray' from light palette top row */
+
+  /* Original Second Row Names -> New Palette Second Row Values */
+  $gray-2: #928374; /* 'gray' from light palette second row */
+  $red-light: #9d0006; /* 'red' from light palette second row */
+  $green-light: #79740e; /* 'green' from light palette second row */
+  $yellow-light: #b57614; /* 'yellow' from light palette second row */
+  $blue-light: #076678; /* 'blue' from light palette second row */
+  $purple-light: #8f3f71; /* 'purple' from light palette second row */
+  $aqua-light: #427b58; /* 'aqua' from light palette second row */
+  $fg: #3c3836; /* 'fg' from light palette second row */
+
+  /* Original Third Row / Background Variant Names -> New Palette Third Row Values */
+  $bg0-h: #f9f5d7; /* 'bg0_h' from light palette */
+  $bg0: #fbf1c7; /* 'bg0' from light palette */
+  $bg1: #ebdbb2; /* 'bg1' from light palette */
+  $bg2: #d5c4a1; /* 'bg2' from light palette */
+  $bg3: #bdae93; /* 'bg3' from light palette */
+  $bg4: #a89984; /* 'bg4' from light palette */
+  $gray-3: #928374; /* 'gray' next to bg4 from light palette (same as $gray-2 here) */
+  $orange-dark: #d65d0e; /* 'orange' from light palette third row */
+
+  /* Original Fourth Row / Foreground Variant Names -> New Palette Fourth Row Values */
+  $bg0-s: #f2e5bc; /* 'bg0_s' from light palette */
+  $fg4: #7c6f64; /* 'fg4' from light palette (same as $gray-1 here) */
+  $fg3: #665c54; /* 'fg3' from light palette */
+  $fg2: #504945; /* 'fg2' from light palette */
+  $fg1: #3c3836; /* 'fg1' from light palette (same as $fg here) */
+  $fg0: #282828; /* 'fg0' from light palette */
+  $orange-light: #af3a03; /* 'orange' from light palette fourth row */
+}
+
+$_text_color: $fg; // Similar to rgba(0,0,6,0.8) on the background #ffffff
+$_hb_fg_color: $fg; // Similar to rgba(0,0,6,0.8) on the background #ebebed
+
+$theme_window_bg_color: $bg;
+$theme_window_fg_color: $fg;
+$theme_view_bg_color: $fg;
+$theme_view_fg_color: $bg;
+$theme_headerbar_bg_color: $bg;
+$theme_headerbar_fg_color: $_hb_fg_color;
+$theme_headerbar_darker_shade_color: rgba(0, 0, 6, 0.12);
+$theme_headerbar_shade_color: rgba(0, 0, 6, 0.12);
+$theme_headerbar_border_color: rgba(0, 0, 6, 0.8);
+$theme_sidebar_border_color: rgba(0, 0, 6, 0.07);
+$theme_sidebar_bg_color: $bg2;
+$theme_sidebar_fg_color: $_hb_fg_color;
+$theme_sidebar_backdrop_color: $bg3;
+$theme_sidebar_shade_color: rgba(0, 0, 6, 0.07);
+$theme_card_bg_color: $bg3;
+$theme_card_fg_color: $_text_color;
+$theme_card_shade_color: rgba(0, 0, 6, 0.07);
+$theme_dialog_bg_color: $bg;
+$theme_dialog_fg_color: $fg;
+$theme_popover_bg_color: $bg0-h;
+$theme_popover_fg_color: $_text_color;
+$theme_popover_shade_color: rgba(0, 0, 6, 0.07);
+$theme_thumbnail_fg_color: $_text_color;
+$theme_thumbnail_bg_color: $bg;
+$theme_shade_color: rgba(0, 0, 6, 0.07);
+$theme_scrollbar_outline_color: $fg;
+$theme_secondary_sidebar_bg_color: $bg1;
+$theme_secondary_sidebar_fg_color: $fg1;
+$theme_secondary_sidebar_backdrop_color: $bg0-h;
+$theme_secondary_sidebar_shade_color: RGB(0 0 6/25%);
+$theme_secondary_sidebar_border_color: RGB(0 0 6/36%);
+
+$accent_blue: $blue-dark;
+$accent_teal: $blue-light;
+$accent_green: $green-light;
+$accent_yellow: $yellow-light;
+$accent_orange: $orange-light;
+$accent_red: $red-light;
+$accent_pink: $aqua-light;
+$accent_purple: $purple-light;
+$accent_slate: $gray-1;
+
+$panel_bg_color: $bg;
+$panel_fg_color: $fg;
+$blue_1: mix($blue-light, $blue-dark, 0%);
+$blue_2:mix($blue-light, $blue-dark, 25%);
+$blue_3: mix($blue-light, $blue-dark, 50%);
+$blue_4: mix($blue-light, $blue-dark, 75%);
+$blue_5: mix($blue-light, $blue-dark, 100%);
+$green_1: mix($green-light, $green-dark, 0%);
+$green_2: mix($green-light, $green-dark, 25%);
+$green_3: mix($green-light, $green-dark, 50%);
+$green_4: mix($green-light, $green-dark, 75%);
+$green_5: mix($green-light, $green-dark, 100%);
+$yellow_1: mix($yellow-light, $yellow-dark, 0%);
+$yellow_2: mix($yellow-light, $yellow-dark, 25%);
+$yellow_3: mix($yellow-light, $yellow-dark, 50%);
+$yellow_4: mix($yellow-light, $yellow-dark, 75%);
+$yellow_5: mix($yellow-light, $yellow-dark, 100%);
+$orange_1: #ffbe6f;
+$orange_2: #ffa348;
+$orange_3: #ff7800;
+$orange_4: #e66100;
+$orange_5: #c64600;
+$red_1: mix($red-light, $red-dark, 0%);
+$red_2: mix($red-light, $red-dark, 25%);
+$red_3: mix($red-light, $red-dark, 50%);
+$red_4: mix($red-light, $red-dark, 75%);
+$red_5: mix($red-light, $red-dark, 100%);
+$purple_1: mix($purple-light, $purple-dark, 0%);
+$purple_2: mix($purple-light, $purple-dark, 25%);
+$purple_3: mix($purple-light, $purple-dark, 50%);
+$purple_4: mix($purple-light, $purple-dark, 75%);
+$purple_5: mix($purple-light, $purple-dark, 100%);
+$brown_1: #cdab8f;
+$brown_2: #b5835a;
+$brown_3: #986a44;
+$brown_4: #865e3c;
+$brown_5: #63452c;
+$light_1: #ffffff;
+$light_2: #f6f5f4;
+$light_3: #deddda;
+$light_4: #c0bfbc;
+$light_5: #9a9996;
+$dark_1: #77767b;
+$dark_2: #5e5c64;
+$dark_3: #3d3846;
+$dark_4: #241f31;
+$dark_5: #000000;

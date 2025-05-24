@@ -1,0 +1,23 @@
+@use '../settings' with (
+  $variant: 'light',
+  $toolkit: 'gtk4'
+);
+
+@use "../colors" as *;
+@use "../defaults" as *;
+
+
+:root { --standalone-color-oklab: max(l, 0.85) a b; --accent-color: oklab(
+    from var(--accent-bg-color) var(--standalone-color-oklab)
+  ); --destructive-color: oklab(
+    from var(--destructive-bg-color) var(--standalone-color-oklab)
+  ); --success-color: oklab(
+    from var(--success-bg-color) var(--standalone-color-oklab)
+  ); --warning-color: oklab(
+    from var(--warning-bg-color) var(--standalone-color-oklab)
+  ); --error-color: oklab(
+    from var(--error-bg-color) var(--standalone-color-oklab)
+  ); --active-toggle-bg-color: rgb(255 255 255 / 20%); --active-toggle-fg-color: #ffffff; --overview-bg-color: #28282c; --overview-fg-color: #ffffff; }
+
+@import 'libadwaita.css';
+@import 'libadwaita-tweaks.css';
