@@ -17,21 +17,21 @@
 
 // The main accent color and the matching text value
 @define-color accent_bg_color #{"" + $accent_blue};
-@define-color accent_fg_color $fg;
+@define-color accent_fg_color #{"" + $bg_dim};
 
 // destructive-action buttons
 @define-color destructive_bg_color #{if($variant == 'light', '@red_3', '@red_4')};
-@define-color destructive_fg_color $fg;
+@define-color destructive_fg_color #{"" + $fg0};
 
 // Levelbars, entries, labels and infobars. These don't need text colors
 @define-color success_bg_color #{if($variant == 'light', '@green_4', '@green_5')};
-@define-color success_fg_color $fg;
+@define-color success_fg_color #{"" + $fg0};
 
-@define-color warning_bg_color #{if($variant == 'light', '@yellow_5', "#c01c28")};
+@define-color warning_bg_color #{if($variant == 'light', '@yellow_5', "@red_3")};
 @define-color warning_fg_color rgba(0,0,0,0.8);
 
 @define-color error_bg_color #{if($variant == 'light', '@red_3', '@red_4')};
-@define-color error_fg_color $fg;
+@define-color error_fg_color #{"" + $fg0};
 
 // Colors derived from their matching bg color
 // Not quite the same as libadwaita but "close enough"

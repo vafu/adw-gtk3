@@ -16,7 +16,7 @@
   --accent-purple: @accent_purple;
   --accent-slate: @accent_slate;
 
-  --accent-bg-color: var(--accent-blue);
+  --accent-bg-color: @accent_bg_color;
   --accent-fg-color: @accent_fg_color;
 
   --window-bg-color: @window_bg_color;
