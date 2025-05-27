@@ -2,6 +2,7 @@ This forks allows to easily set custom colors for adw-gtk3 theme.
 
 # How to edit theme
 
+-1. remove all custom gtk-3.0 and gtk-4.0 in ~/.config 
 0. clone this repo, `git checkout themes`
 1. edit [_custom_colors.sass](src/sass/_custom_colors.scss) to match a desired colorscheme
   - First part of a file defines dark scheme
