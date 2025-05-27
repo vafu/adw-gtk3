@@ -7,3 +7,4 @@ build
 
 # Ignore parsed CSS files
 src/*.css
+!src/accent-color*.css

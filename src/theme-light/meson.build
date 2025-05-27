@@ -84,4 +84,6 @@ install_data(gtk4_assets, install_dir: gtk4_asset_dir)
 
 # Misc
 install_subdir('../assets', install_dir : gtk3_dir, strip_directory : false)
+install_symlink('accent-color.css', install_dir:gtk3_dir, pointing_to: '../../accent-color.css')
+install_symlink('accent-color.css', install_dir:gtk4_dir, pointing_to: '../../accent-color.css')
 install_data(['thumbnail-light.png'], install_dir: gtk3_dir, rename: ['thumbnail.png'])
