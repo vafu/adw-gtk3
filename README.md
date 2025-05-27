@@ -12,6 +12,12 @@ This forks allows to easily set custom colors for adw-gtk3 theme.
 4. `gsettings set org.gnome.desktop.interface gtk-theme 'ags-theme'` or `gsettings set org.gnome.desktop.interface gtk-theme 'ags-theme-dark'`
  - replace "ags-theme" with your theme name if edited
 
+# How to change accent color?
+The theme installs a `accent-color.css` file in your theme directory. 
+by default the color is set to `@define-color accent_bg_color @accent_green;`.
+This css is symlined into both light and dark themes, so you'll need to edit just that one file and reload theme. 
+Example script of how to do that automatically: https://github.com/vafu/dot-config/blob/main/ags/scripts/sync_accent.sh
+
 # My libadwaita apps don't reload theme?
 [That's a long story](https://discourse.gnome.org/t/why-and-how-libadwaita-prevents-theming/17079).
 Either restart the app, or install [libadwaita-without-adwaita](https://aur.archlinux.org/packages/libadwaita-without-adwaita-git) to support autoreload.
