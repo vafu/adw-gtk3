@@ -1,8 +1,20 @@
-This forks allows to easily set custom colors for adw-gtk3 theme.
-edit [_custom_colors.sass](src/sass/_custom_colors.scss) to your liking and rebuild. 
-accent color is defined in your `install_dir/accent-color.css`. Simply edit it to be one of `accent-red/green/teal/...` and reload theme.
+This forks allows to easily set custom colors for adw-gtk3 theme. 
 
-leaving rest of readme as is
+# How to edit theme
+
+0. clone this repo
+1. edit [_custom_colors.sass](src/sass/_custom_colors.scss) to match a desired colorscheme
+  - First part of a file defines dark scheme
+  - contents within `if` override variables for light scheme
+  - rest of the file is mapping to actual gtk parts
+2.  optionally edit [meson.build](meson.build) to change result theme name.
+3. `meson setup --prefx ~/.local build && meson install -C build`
+4. `gsettings set org.gnome.desktop.interface gtk-theme 'ags-theme'` or `gsettings set org.gnome.desktop.interface gtk-theme 'ags-theme-dark'`
+ - replace "ags-theme" with your theme name if edited
+
+# My libadwaita apps don't reload theme?
+[That's a long story](https://discourse.gnome.org/t/why-and-how-libadwaita-prevents-theming/17079).
+Either restart the app, or install [libadwaita-without-adwaita](https://aur.archlinux.org/packages/libadwaita-without-adwaita-git) to support autoreload.
 
 <div align="center">
   
