@@ -1,5 +1,5 @@
 This forks allows to easily set custom colors for adw-gtk3 theme.
-edit [_custom_colors.sass](src/sass/_custom_colors.sass) to your liking and rebuild. 
+edit [_custom_colors.sass](src/sass/_custom_colors.scss) to your liking and rebuild. 
 accent color is defined in your `install_dir/accent-color.css`. Simply edit it to be one of `accent-red/green/teal/...` and reload theme.
 
 leaving rest of readme as is
