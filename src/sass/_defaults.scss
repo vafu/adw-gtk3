@@ -13,7 +13,7 @@
 @use "settings" as *;
 @use "functions" as *;
 @use "palette" as *;
-@use "dark_colors" as *;
+@use "custom_colors" as *;
 
 /* // The main accent color and the matching text value */
 @define-color accent_fg_color #{"" + $bg_dim};

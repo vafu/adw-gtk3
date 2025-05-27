@@ -2,7 +2,7 @@
 @use 'functions' as *;
 @use 'palette' as *;
 @use 'defaults' as *;
-@forward 'dark_colors';
+@forward 'custom_colors';
 
 // Some named colors from _defaults.scss
 $window_bg_color: gtkcolor(window_bg_color);
