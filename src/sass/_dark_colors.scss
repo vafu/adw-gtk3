@@ -33,7 +33,7 @@ $bg3: #45403d;
 $bg4: #45403d;
 $bg5: #5e524c;
 $fg0: #d4be98;
-$fg1: #ddc7a1;
+$fg1: #7c6f64;
 
 @if $variant == "light" {
   $green: #6c782e;
@@ -72,7 +72,7 @@ $fg1: #ddc7a1;
   $bg5: #ebdbb2;
 
   $fg0: #654735;
-  $fg1: #4f3829;
+  $fg1: #928374;
 }
 
 $_text_color: $fg0;
