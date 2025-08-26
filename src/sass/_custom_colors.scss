@@ -78,35 +78,37 @@ $fg1: #7c6f64;
 $_text_color: $fg0;
 $_hb_fg_color: $fg0;
 
-$theme_window_bg_color: $bg0;
+$frost: 0.03;
+
+$theme_window_bg_color: transparentize($bg0, $frost);
 $theme_window_fg_color: $fg0;
-$theme_view_bg_color: $fg0;
-$theme_view_fg_color: $bg0;
-$theme_headerbar_bg_color: $bg0;
+$theme_view_bg_color: transparentize($bg0, $frost);
+$theme_view_fg_color: $fg0;
+$theme_headerbar_bg_color: transparentize($bg0, $frost);
 $theme_headerbar_fg_color: $_hb_fg_color;
 $theme_headerbar_darker_shade_color: rgba(0, 0, 6, 0.12);
 $theme_headerbar_shade_color: rgba(0, 0, 6, 0.12);
 $theme_headerbar_border_color: rgba(0, 0, 6, 0.8);
 $theme_sidebar_border_color: rgba(0, 0, 6, 0.07);
-$theme_sidebar_bg_color: $bg3;
+$theme_sidebar_bg_color: transparentize($bg3, $frost);
 $theme_sidebar_fg_color: $_hb_fg_color;
-$theme_sidebar_backdrop_color: $bg5;
+$theme_sidebar_backdrop_color: transparentize($bg5, $frost);
 $theme_sidebar_shade_color: rgba(0, 0, 6, 0.07);
-$theme_card_bg_color: $bg3;
+$theme_card_bg_color: transparentize($bg3, $frost);
 $theme_card_fg_color: $_text_color;
 $theme_card_shade_color: rgba(0, 0, 6, 0.07);
-$theme_dialog_bg_color: $bg_dim;
+$theme_dialog_bg_color: transparentize($bg_dim, $frost);
 $theme_dialog_fg_color: $fg0;
 $theme_popover_bg_color: $bg_dim;
 $theme_popover_fg_color: $_text_color;
 $theme_popover_shade_color: rgba(0, 0, 6, 0.07);
 $theme_thumbnail_fg_color: $_text_color;
-$theme_thumbnail_bg_color: $bg0;
+$theme_thumbnail_bg_color: transparentize($bg0, $frost);
 $theme_shade_color: rgba(0, 0, 6, 0.07);
 $theme_scrollbar_outline_color: $fg0;
-$theme_secondary_sidebar_bg_color: $bg1;
+$theme_secondary_sidebar_bg_color: transparentize($bg1, $frost);
 $theme_secondary_sidebar_fg_color: $fg1;
-$theme_secondary_sidebar_backdrop_color: $bg_dim;
+$theme_secondary_sidebar_backdrop_color: transparentize($bg_dim, $frost);
 $theme_secondary_sidebar_shade_color: RGB(0 0 6/25%);
 $theme_secondary_sidebar_border_color: RGB(0 0 6/36%);
 
@@ -120,7 +122,7 @@ $accent_pink: $purple;
 $accent_purple: $purple;
 $accent_slate: $grey2;
 
-$panel_bg_color: $bg0;
+$panel_bg_color: transparentize($bg0, $frost);
 $panel_fg_color: $fg0;
 
 $blue_1: mix($blue, $blue_dim, 0%);
