@@ -33,13 +33,13 @@ $grey1: #939ab7; // Overlay2
 $grey2: #a5adce; // Subtext0
 
 // Backgrounds
-$bg_dim: #181926; // Crust (Darkest Background)
-$bg0: #24273a; // Base (Default Background)
-$bg1: #363a4f; // Surface0 (Slightly lighter bg)
-$bg2: #363a4f; // Surface0
-$bg3: #494d64; // Surface1 (Lighter bg)
-$bg4: #494d64; // Surface1
-$bg5: #5b6078; // Surface2 (Lightest bg / UI elements)
+$bg_dim: #181926f0; // Crust (Darkest Background)
+$bg0: #24273af0; // Base (Default Background)
+$bg1: #363a4ff0; // Surface0 (Slightly lighter bg)
+$bg2: #363a4ff0; // Surface0
+$bg3: #494d64f0; // Surface1 (Lighter bg)
+$bg4: #494d64f0; // Surface1
+$bg5: #5b6078f0; // Surface2 (Lightest bg / UI elements)
 
 // Foregrounds
 $fg0: #cad3f5; // Text (Primary Foreground)
@@ -77,13 +77,13 @@ $fg1: #b8c0e0; // Subtext1 (Secondary Foreground)
   $grey2: #9ca0b0; // Overlay0 (Lightest Grey)
 
   // Backgrounds
-  $bg_dim: #e6e9ef; // Mantle (Slightly darker than base)
-  $bg0: #eff1f5; // Base (Default Background)
-  $bg1: #ccd0da; // Surface0 (UI element background)
-  $bg2: #ccd0da; // Surface0
-  $bg3: #bcc0cc; // Surface1
-  $bg4: #bcc0cc; // Surface1
-  $bg5: #acb0be; // Surface2 (Darkest UI Surface)
+  $bg_dim: #e6e9eff0; // Mantle (Slightly darker than base)
+  $bg0: #eff1f5f0; // Base (Default Background)
+  $bg1: #ccd0daf0; // Surface0 (UI element background)
+  $bg2: #ccd0daf0; // Surface0
+  $bg3: #bcc0ccf0; // Surface1
+  $bg4: #bcc0ccf0; // Surface1
+  $bg5: #acb0bef0; // Surface2 (Darkest UI Surface)
 
   // Foregrounds
   $fg0: #4c4f69; // Text (Primary Foreground)
