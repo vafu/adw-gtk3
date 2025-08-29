@@ -52,8 +52,8 @@
 @define-color window_bg_color #{"" + $theme_window_bg_color};
 @define-color window_fg_color #{"" + $theme_window_fg_color};
 
-@define-color view_fg_color #{"" + $theme_view_bg_color};
-@define-color view_bg_color #{"" + $theme_view_fg_color};
+@define-color view_bg_color #{"" + $theme_view_bg_color};
+@define-color view_fg_color #{"" + $theme_view_fg_color};
 
 // Header bar, search bar, tab bar
 @define-color headerbar_bg_color #{"" + $theme_headerbar_bg_color};
