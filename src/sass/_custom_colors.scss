@@ -78,7 +78,7 @@ $fg1: #7c6f64;
 $_text_color: $fg0;
 $_hb_fg_color: $fg0;
 
-$frost: 0.03;
+$frost: 0.0333;
 
 $theme_window_bg_color: transparentize($bg0, $frost);
 $theme_window_fg_color: $fg0;
@@ -99,7 +99,7 @@ $theme_card_fg_color: $_text_color;
 $theme_card_shade_color: rgba(0, 0, 6, 0.07);
 $theme_dialog_bg_color: transparentize($bg_dim, $frost);
 $theme_dialog_fg_color: $fg0;
-$theme_popover_bg_color: $bg_dim;
+$theme_popover_bg_color: transparentize($bg_dim, $frost);
 $theme_popover_fg_color: $_text_color;
 $theme_popover_shade_color: rgba(0, 0, 6, 0.07);
 $theme_thumbnail_fg_color: $_text_color;
