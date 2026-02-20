@@ -1,94 +1,80 @@
 @use "sass:color";
 @use "settings" as *;
 
-// Green
-$green: #a6da95; // Green
-$green_bg: #a6da95; // Reused from $green for compatibility
-$green_dim: #a6da95; // Reused from $green for compatibility
+// --- Everforest Dark (Hard) ---
+$green: #A7C080;
+$green_bg: #3C4841; // bg_green
+$green_dim: #A7C080;
 
-// Red
-$red: #ed8796; // Red
-$red_bg: #ed8796; // Reused from $red for compatibility
-$red_dim: #ed8796; // Reused from $red for compatibility
+$red: #E67E80;
+$red_bg: #493B40; // bg_red
+$red_dim: #E67E80;
 
-// Blue
-$blue: #8aadf4; // Blue
-$blue_bg: #8aadf4; // Reused from $blue for compatibility
-$blue_dim: #8aadf4; // Reused from $blue for compatibility
+$blue: #7FBBB3;
+$blue_bg: #384B55; // bg_blue
+$blue_dim: #7FBBB3;
 
-// Yellow
-$yellow: #eed49f; // Yellow
-$yellow_dim: #eed49f; // Reused from $yellow for compatibility
+$yellow: #DBBC7F;
+$yellow_dim: #DBBC7F;
 
-// Other Accents
-$orange: #f5a97f; // Peach
-$aqua: #8bd5ca; // Teal
-$purple: #c6a0f6; // Mauve
+$orange: #E69875;
+$aqua: #83C092;
+$purple: #D699B6;
 
 // --- Neutrals ---
+$grey0: #7A8478; // grey0
+$grey1: #859289; // grey1
+$grey2: #9DA9A0; // grey2
 
-// Greys / UI Text
-$grey0: #8087a2; // Overlay1
-$grey1: #939ab7; // Overlay2
-$grey2: #a5adce; // Subtext0
+$bg_dim: #1E2326; // bg_dim
+$bg0: #272E33; // bg0
+$bg1: #2E383C; // bg1
+$bg2: #374145; // bg2
+$bg3: #414B50; // bg3
+$bg4: #495156; // bg4
+$bg5: #4F5B58; // bg5
 
-// Backgrounds
-$bg_dim: #181926; // Crust (Darkest Background)
-$bg0: #24273a; // Base (Default Background)
-$bg1: #363a4f; // Surface0 (Slightly lighter bg)
-$bg2: #363a4f; // Surface0
-$bg3: #494d64; // Surface1 (Lighter bg)
-$bg4: #494d64; // Surface1
-$bg5: #5b6078; // Surface2 (Lightest bg / UI elements)
-
-// Foregrounds
-$fg0: #cad3f5; // Text (Primary Foreground)
-$fg1: #b8c0e0; // Subtext1 (Secondary Foreground)
+$fg0: #D3C6AA; // fg
+$fg1: #D3C6AA;
 
 @if $variant =="light" {
-  $green: #40a02b; // Green
-  $green_bg: #40a02b; // Reused from $green for compatibility
-  $green_dim: #40a02b; // Reused from $green for compatibility
+  // --- Everforest Light ---
+  $green: #8DA101;
+  $green_bg: #F3F5D9; // bg_green
+  $green_dim: #8DA101;
 
-  // Red
-  $red: #d20f39; // Red
-  $red_bg: #d20f39; // Reused from $red for compatibility
-  $red_dim: #d20f39; // Reused from $red for compatibility
+  $red: #F85552;
+  $red_bg: #FFE7DE; // bg_red
+  $red_dim: #F85552;
 
-  // Blue
-  $blue: #1e66f5; // Blue
-  $blue_bg: #1e66f5; // Reused from $blue for compatibility
-  $blue_dim: #1e66f5; // Reused from $blue for compatibility
+  $blue: #3A94C5;
+  $blue_bg: #ECF5ED; // bg_blue
+  $blue_dim: #3A94C5;
 
-  // Yellow
-  $yellow: #df8e1d; // Yellow
-  $yellow_dim: #df8e1d; // Reused from $yellow for compatibility
+  $yellow: #DFA000;
+  $yellow_dim: #DFA000;
 
-  // Other Accents
-  $orange: #fe640b; // Peach
-  $aqua: #179299; // Teal
-  $purple: #8839ef; // Mauve
+  $orange: #F57D26;
+  $aqua: #35A77C;
+  $purple: #DF69BA;
 
   // --- Neutrals ---
+  $grey0: #A6B0A0; // grey0
+  $grey1: #939F91; // grey1
+  $grey2: #829181; // grey2
 
-  // Greys / UI Elements
-  $grey0: #7c7f93; // Overlay2 (Darkest Grey)
-  $grey1: #8c8fa1; // Overlay1
-  $grey2: #9ca0b0; // Overlay0 (Lightest Grey)
+  $bg_dim: #F2EFDF; // bg_dim
+  $bg0: #FFFBEF; // bg0
+  $bg1: #F8F5E4; // bg1
+  $bg2: #F2EFDF; // bg2
+  $bg3: #EDEADA; // bg3
+  $bg4: #E8E5D5; // bg4
+  $bg5: #BEC5B2; // bg5
 
-  // Backgrounds
-  $bg_dim: #e6e9ef; // Mantle (Slightly darker than base)
-  $bg0: #eff1f5; // Base (Default Background)
-  $bg1: #ccd0da; // Surface0 (UI element background)
-  $bg2: #ccd0da; // Surface0
-  $bg3: #bcc0cc; // Surface1
-  $bg4: #bcc0cc; // Surface1
-  $bg5: #acb0be; // Surface2 (Darkest UI Surface)
-
-  // Foregrounds
-  $fg0: #4c4f69; // Text (Primary Foreground)
-  $fg1: #5c5f77; // Subtext1 (Secondary Foreground)
+  $fg0: #5C6A72; // fg
+  $fg1: #5C6A72;
 }
+
 
 $_text_color: $fg0;
 $_hb_fg_color: $fg0;
