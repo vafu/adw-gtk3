@@ -1,93 +1,91 @@
 @use "sass:color";
 @use "settings" as *;
 
-// Green
-$green: #a6da95; // Green
-$green_bg: #a6da95; // Reused from $green for compatibility
-$green_dim: #a6da95; // Reused from $green for compatibility
+// --- Rosé Pine (Dark) ---
 
-// Red
-$red: #ed8796; // Red
-$red_bg: #ed8796; // Reused from $red for compatibility
-$red_dim: #ed8796; // Reused from $red for compatibility
+// Accents
+$red: #eb6f92;        // Love
+$red_bg: #eb6f92;
+$red_dim: #eb6f92;
 
-// Blue
-$blue: #8aadf4; // Blue
-$blue_bg: #8aadf4; // Reused from $blue for compatibility
-$blue_dim: #8aadf4; // Reused from $blue for compatibility
+$green: #31748f;      // Pine
+$green_bg: #31748f;
+$green_dim: #31748f;
 
-// Yellow
-$yellow: #eed49f; // Yellow
-$yellow_dim: #eed49f; // Reused from $yellow for compatibility
+$blue: #c4a7e7;       // Iris (Mapped to blue for contrast)
+$blue_bg: #c4a7e7;
+$blue_dim: #c4a7e7;
 
-// Other Accents
-$orange: #f5a97f; // Peach
-$aqua: #8bd5ca; // Teal
-$purple: #c6a0f6; // Mauve
+$yellow: #f6c177;     // Gold
+$yellow_dim: #f6c177;
+
+$orange: #ebbcba;     // Rose
+$aqua: #9ccfd8;       // Foam
+$purple: #c4a7e7;     // Iris
 
 // --- Neutrals ---
 
 // Greys / UI Text
-$grey0: #8087a2; // Overlay1
-$grey1: #939ab7; // Overlay2
-$grey2: #a5adce; // Subtext0
+$grey0: #6e6a86;      // Muted
+$grey1: #908caa;      // Subtle
+$grey2: #e0def4;      // Text (Dimmed)
 
 // Backgrounds
-$bg_dim: #181926; // Crust (Darkest Background)
-$bg0: #24273a; // Base (Default Background)
-$bg1: #363a4f; // Surface0 (Slightly lighter bg)
-$bg2: #363a4f; // Surface0
-$bg3: #494d64; // Surface1 (Lighter bg)
-$bg4: #494d64; // Surface1
-$bg5: #5b6078; // Surface2 (Lightest bg / UI elements)
+$bg_dim: #21202e;     // Highlight Low
+$bg0: #191724;        // Base
+$bg1: #1f1d2e;        // Surface
+$bg2: #1f1d2e;
+$bg3: #26233a;        // Overlay
+$bg4: #26233a;
+$bg5: #403d52;        // Highlight Med
 
 // Foregrounds
-$fg0: #cad3f5; // Text (Primary Foreground)
-$fg1: #b8c0e0; // Subtext1 (Secondary Foreground)
+$fg0: #e0def4;        // Text
+$fg1: #908caa;        // Subtle
 
-@if $variant =="light" {
-  $green: #40a02b; // Green
-  $green_bg: #40a02b; // Reused from $green for compatibility
-  $green_dim: #40a02b; // Reused from $green for compatibility
 
-  // Red
-  $red: #d20f39; // Red
-  $red_bg: #d20f39; // Reused from $red for compatibility
-  $red_dim: #d20f39; // Reused from $red for compatibility
+@if $variant == "light" {
+  // --- Rosé Pine Dawn (Light) ---
 
-  // Blue
-  $blue: #1e66f5; // Blue
-  $blue_bg: #1e66f5; // Reused from $blue for compatibility
-  $blue_dim: #1e66f5; // Reused from $blue for compatibility
+  // Accents
+  $red: #b4637a;      // Love
+  $red_bg: #b4637a;
+  $red_dim: #b4637a;
 
-  // Yellow
-  $yellow: #df8e1d; // Yellow
-  $yellow_dim: #df8e1d; // Reused from $yellow for compatibility
+  $green: #286983;    // Pine
+  $green_bg: #286983;
+  $green_dim: #286983;
 
-  // Other Accents
-  $orange: #fe640b; // Peach
-  $aqua: #179299; // Teal
-  $purple: #8839ef; // Mauve
+  $blue: #907aa9;     // Iris
+  $blue_bg: #907aa9;
+  $blue_dim: #907aa9;
+
+  $yellow: #ea9d34;   // Gold
+  $yellow_dim: #ea9d34;
+
+  $orange: #d7827e;   // Rose
+  $aqua: #56949f;     // Foam
+  $purple: #907aa9;   // Iris
 
   // --- Neutrals ---
 
   // Greys / UI Elements
-  $grey0: #7c7f93; // Overlay2 (Darkest Grey)
-  $grey1: #8c8fa1; // Overlay1
-  $grey2: #9ca0b0; // Overlay0 (Lightest Grey)
+  $grey0: #9893a5;    // Muted
+  $grey1: #797593;    // Subtle
+  $grey2: #575279;    // Text (Dimmed)
 
   // Backgrounds
-  $bg_dim: #e6e9ef; // Mantle (Slightly darker than base)
-  $bg0: #eff1f5; // Base (Default Background)
-  $bg1: #ccd0da; // Surface0 (UI element background)
-  $bg2: #ccd0da; // Surface0
-  $bg3: #bcc0cc; // Surface1
-  $bg4: #bcc0cc; // Surface1
-  $bg5: #acb0be; // Surface2 (Darkest UI Surface)
+  $bg_dim: #f4ede8;   // Highlight Low
+  $bg0: #faf4ed;      // Base
+  $bg1: #fffaf3;      // Surface
+  $bg2: #fffaf3;
+  $bg3: #f2e9e1;      // Overlay
+  $bg4: #f2e9e1;
+  $bg5: #dfdad9;      // Highlight Med
 
   // Foregrounds
-  $fg0: #4c4f69; // Text (Primary Foreground)
-  $fg1: #5c5f77; // Subtext1 (Secondary Foreground)
+  $fg0: #575279;      // Text
+  $fg1: #797593;      // Subtle
 }
 
 $_text_color: $fg0;
