@@ -8,18 +8,18 @@ $red: #eb6f92;        // Love
 $red_bg: #eb6f92;
 $red_dim: #eb6f92;
 
-$green: #31748f;      // Pine
-$green_bg: #31748f;
-$green_dim: #31748f;
+$green: #3e8fb0;      // Pine (Updated from #31748f)
+$green_bg: #3e8fb0;
+$green_dim: #3e8fb0;
 
-$blue: #c4a7e7;       // Iris (Mapped to blue for contrast)
+$blue: #c4a7e7;       // Iris
 $blue_bg: #c4a7e7;
 $blue_dim: #c4a7e7;
 
-$yellow: #f6c177;     // Gold
+$yellow: #f6c177;      // Gold
 $yellow_dim: #f6c177;
 
-$orange: #ebbcba;     // Rose
+$orange: #ea9a97;     // Rose (Updated from #ebbcba)
 $aqua: #9ccfd8;       // Foam
 $purple: #c4a7e7;     // Iris
 
@@ -28,22 +28,21 @@ $purple: #c4a7e7;     // Iris
 // Greys / UI Text
 $grey0: #6e6a86;      // Muted
 $grey1: #908caa;      // Subtle
-$grey2: #e0def4;      // Text (Dimmed)
+$grey2: #e0def4;      // Text
 
 // Backgrounds
-$bg_dim: #21202e;     // Highlight Low
-$bg0: #191724;        // Base
-$bg1: #1f1d2e;        // Surface
-$bg2: #1f1d2e;
-$bg3: #26233a;        // Overlay
-$bg4: #26233a;
-$bg5: #403d52;        // Highlight Med
+$bg_dim: #2a283e;     // Highlight Low (Updated from #21202e)
+$bg0: #232136;        // Base (Updated from #191724)
+$bg1: #2a273f;        // Surface (Updated from #1f1d2e)
+$bg2: #2a273f;
+$bg3: #393552;        // Overlay (Updated from #26233a)
+$bg4: #393552;
+$bg5: #44415a;        // Highlight Med (Updated from #403d52)
+$bg6: #56526e;        // Highlight High
 
 // Foregrounds
 $fg0: #e0def4;        // Text
 $fg1: #908caa;        // Subtle
-
-
 @if $variant == "light" {
   // --- Rosé Pine Dawn (Light) ---
 
