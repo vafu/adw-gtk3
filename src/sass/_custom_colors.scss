@@ -1,160 +1,213 @@
 @use "sass:color";
 @use "settings" as *;
 
-// --- Kanso Theme Switcher ---
-// Options: "zen", "ink", "mist"
-$kanso_variant: "mist";
+// ============================================================================
+// Kanso theme variant — pick one:
+//   "ink"   — dark, deep blue-black (default)
+//   "mist"  — dark, lighter slate
+//   "zen"   — dark, near-black
+//   "pearl" — light
+// Note: keep $variant in settings.scss in sync ("dark" for ink/mist/zen,
+// "light" for pearl) so named_colors.scss picks the right destructive/
+// warning/error shades.
+// ============================================================================
 
-// --- Neutrals & Backgrounds Logic ---
-$bg0: #14171d; // Default InkBg0
-$bg1: #1f1f26;
-$bg2: #22262D;
-$bg3: #393B44;
-$bg4: #393B44;
-$bg5: #4b4e57;
-$bg_dim: #14171d;
+// ----------------------------------------------------------------------------
+// Accent palette — defaults are the Kanso dark-theme colors
+// (shared by ink, mist, zen). Pearl overrides all of these below.
+// ----------------------------------------------------------------------------
+$green:    #98BB6C;
+$green_bg: #2B3328;   // diffGreen
 
-@if $kanso_variant =="zen" {
-  $bg0: #090E13;
-  $bg1: #1C1E25;
-  $bg2: #22262D;
-  $bg3: #393B44;
-  $bg_dim: #090E13;
+$red:    #C34043;
+$red_bg: #43242B;     // diffRed
+
+$blue:    #7FB4CA;
+$blue_bg: #252535;    // diffBlue
+
+$yellow: #DCA561;
+
+$orange: #b6927b;
+$aqua:   #8ea4a2;
+$purple: #938AA9;     // violet
+
+$grey0: #5C6066;      // gray5
+$grey1: #717C7C;      // gray
+$grey2: #A4A7A4;      // gray2
+
+// ----------------------------------------------------------------------------
+// Backgrounds & foregrounds — default is "ink"
+// ----------------------------------------------------------------------------
+$bg_dim: #090E13;     // inkBg0
+$bg0:    #14171d;     // inkBg0
+$bg1:    #1f1f26;     // inkBg1
+$bg2:    #22262D;     // inkBg2
+$bg3:    #22262D;     // inkBg2
+$bg5:    #393B44;     // inkBg3
+$bg6:    #4b4e57;     // inkBg4
+
+$fg0: #C5C9C7;        // fg
+$fg1: #717C7C;        // gray
+//
+// @if $kanso_theme == "mist" {
+//   $bg_dim: #22262D;   // mistBg0
+//   $bg0:    #2a2c35;   // mistBg1
+//   $bg1:    #393B44;   // mistBg2
+//   $bg2:    #393B44;
+//   $bg3:    #393B44;
+//   $bg4:    #5C6066;   // mistBg3
+//   $bg5:    #5C6066;
+// }
+//
+// @if $kanso_theme == "zen" {
+  // $bg_dim: #090E13;   // zenBg0
+  // $bg0: #090E13;   // zenBg0
+  // $bg1:    #1C1E25;   // zenBg1
+  // $bg2:    #22262D;   // zenBg2
+  // $bg3:    #22262D;
+  // $bg4:    #393B44;   // zenBg3
+  // $bg5:    #393B44;
+// }
+
+@if $variant == "light" {
+  // Light theme — pearl
+  $green:    #6f894e;   // pearlGreen
+  $green_bg: #b7d0ae;   // pearlGreen3 (light tinted bg)
+
+  $red:    #c84053;     // pearlRed
+  $red_bg: #d9a594;     // pearlRed4
+
+  $blue:    #4e8ca2;    // pearlTeal1
+  $blue_bg: #c7d7e0;    // pearlBlue1
+
+  $yellow: #de9800;     // pearlYellow3
+
+  $orange: #cc6d00;     // pearlOrange
+  $aqua:   #597b75;     // pearlAqua
+  $purple: #766b90;     // pearlViolet2
+
+  $grey0: #9F9F99;      // pearlGray4
+  $grey1: #6D6D69;      // pearlGray3
+  $grey2: #5C6068;      // pearlGray2
+
+  $bg_dim: #e2e1df;     // pearlWhite1 (slightly darker than bg0)
+  $bg0:    #f2f1ef;     // pearlWhite0 (main bg)
+  $bg1:    #e2e1df;     // pearlWhite1
+  $bg2:    #e2e1df;     // pearlWhite1
+  $bg3:    #dddddb;     // pearlWhite2
+  $bg4:    #cacac7;     // pearlWhite3
+  $bg5:    #cacac7;     // pearlWhite3
+
+  $fg0: #22262D;        // pearlBlack0
+  $fg1: #545464;        // pearlBlack1
 }
 
-@else if $kanso_variant =="mist" {
-  $bg0: #22262D;
-  $bg1: #2a2c35;
-  $bg2: #393B44;
-  $bg3: #5C6066;
-  $bg_dim: #22262D;
-}
+// ----------------------------------------------------------------------------
+// Dim variants — computed from main color + bg.
+// These feed the *_1..*_5 scales below (1 = dim, 5 = full color),
+// auto-adapting to whichever Kanso variant is active.
+// ----------------------------------------------------------------------------
+$green_dim:  mix($green,  $bg0, 22%);
+$red_dim:    mix($red,    $bg0, 22%);
+$blue_dim:   mix($blue,   $bg0, 22%);
+$yellow_dim: mix($yellow, $bg0, 22%);
+$orange_dim: mix($orange, $bg0, 22%);
 
-// --- Main Accents (Using Saturated for GTK clarity) ---
-$red: #C93134;
-$red_bg: #C34043;
-$red_dim: #43242B; // diffRed
-
-$green: #8FC055;
-$green_bg: #98BB6C;
-$green_dim: #2B3328; // diffGreen
-
-$blue: #6EBBD4;
-$blue_bg: #7FB4CA;
-$blue_dim: #252535; // diffBlue
-
-$yellow: #E59F49;
-$yellow_dim: #49443C; // diffYellow
-
-$orange: #BC8A6C;
-$aqua: #81AAA9;
-$purple: #8A88B0;
-
-// --- Greys / UI Text ---
-$fg0: #C5C9C7; // Main Fg
-$fg1: #A4A7A4; // gray2
-$grey0: #5C6066; // gray5
-$grey1: #717C7C; // gray
-$grey2: #909398; // gray3
-
-// --- Light Variant (Pearl) ---
-@if $variant =="light" {
-  $red: #D72436;
-  $green: #5E8F2F;
-  $blue: #2A73B1;
-  $yellow: #F28C00;
-  $orange: #E05700;
-  $aqua: #3E8366;
-  $purple: #44418F;
-
-  $bg0: #f2f1ef; // pearlWhite0
-  $bg1: #e2e1df; // pearlWhite1
-  $bg2: #dddddb;
-  $bg3: #cacac7;
-  $bg_dim: #f2f1ef;
-
-  $fg0: #22262D; // pearlBlack0
-  $fg1: #545464; // pearlBlack1
-}
-
+// ----------------------------------------------------------------------------
+// Theme variables (mapped to GTK widgets in named_colors.scss)
+// ----------------------------------------------------------------------------
 $_text_color: $fg0;
 $_hb_fg_color: $fg0;
 
-$theme_window_bg_color: $bg0;
+$frost: 0.0;
+
+$theme_window_bg_color: transparentize($bg0, $frost);
 $theme_window_fg_color: $fg0;
+$theme_view_bg_color: transparentize($bg0, $frost);
 $theme_view_fg_color: $fg0;
-$theme_view_bg_color: $bg0;
-$theme_headerbar_bg_color: $bg0;
+$theme_headerbar_bg_color: transparentize($bg0, $frost);
 $theme_headerbar_fg_color: $_hb_fg_color;
 $theme_headerbar_darker_shade_color: rgba(0, 0, 6, 0.12);
 $theme_headerbar_shade_color: rgba(0, 0, 6, 0.12);
 $theme_headerbar_border_color: rgba(0, 0, 6, 0.8);
 $theme_sidebar_border_color: rgba(0, 0, 6, 0.07);
-$theme_sidebar_bg_color: $bg3;
+$theme_sidebar_bg_color: transparentize($bg3, $frost);
 $theme_sidebar_fg_color: $_hb_fg_color;
-$theme_sidebar_backdrop_color: $bg5;
+$theme_sidebar_backdrop_color: transparentize($bg5, $frost);
 $theme_sidebar_shade_color: rgba(0, 0, 6, 0.07);
-$theme_card_bg_color: $bg3;
+$theme_card_bg_color: transparentize($bg3, $frost);
 $theme_card_fg_color: $_text_color;
 $theme_card_shade_color: rgba(0, 0, 6, 0.07);
-$theme_dialog_bg_color: $bg_dim;
+$theme_dialog_bg_color: transparentize($bg_dim, $frost);
 $theme_dialog_fg_color: $fg0;
-$theme_popover_bg_color: $bg_dim;
+$theme_popover_bg_color: transparentize($bg_dim, $frost);
 $theme_popover_fg_color: $_text_color;
 $theme_popover_shade_color: rgba(0, 0, 6, 0.07);
 $theme_thumbnail_fg_color: $_text_color;
-$theme_thumbnail_bg_color: $bg0;
+$theme_thumbnail_bg_color: transparentize($bg0, $frost);
 $theme_shade_color: rgba(0, 0, 6, 0.07);
 $theme_scrollbar_outline_color: $fg0;
-$theme_secondary_sidebar_bg_color: $bg1;
+$theme_secondary_sidebar_bg_color: transparentize($bg1, $frost);
 $theme_secondary_sidebar_fg_color: $fg1;
-$theme_secondary_sidebar_backdrop_color: $bg_dim;
+$theme_secondary_sidebar_backdrop_color: transparentize($bg_dim, $frost);
 $theme_secondary_sidebar_shade_color: RGB(0 0 6/25%);
 $theme_secondary_sidebar_border_color: RGB(0 0 6/36%);
 
-$accent_blue: $blue;
-$accent_teal: $aqua;
-$accent_green: $green;
+$accent_blue:   $blue;
+$accent_teal:   $aqua;
+$accent_green:  $green;
 $accent_yellow: $yellow;
 $accent_orange: $orange;
-$accent_red: $red;
-$accent_pink: $purple;
+$accent_red:    $red;
+$accent_pink:   $purple;
 $accent_purple: $purple;
-$accent_slate: $grey2;
+$accent_slate:  $grey2;
 
-$panel_bg_color: $bg0;
+$panel_bg_color: transparentize($bg0, $frost);
 $panel_fg_color: $fg0;
 
-$blue_1: mix($blue, $blue_dim, 0%);
-$blue_2: mix($blue, $blue_dim, 25%);
-$blue_3: mix($blue, $blue_dim, 50%);
-$blue_4: mix($blue, $blue_dim, 75%);
-$blue_5: mix($blue, $blue_dim, 100%);
-$green_1: mix($green, $green_dim, 0%);
-$green_2: mix($green, $green_dim, 25%);
-$green_3: mix($green, $green_dim, 50%);
-$green_4: mix($green, $green_dim, 75%);
-$green_5: mix($green, $green_dim, 100%);
-$yellow_1: mix($yellow, $yellow_dim, 0%);
-$yellow_2: mix($yellow, $yellow_dim, 25%);
-$yellow_3: mix($yellow, $yellow_dim, 50%);
-$yellow_4: mix($yellow, $yellow_dim, 75%);
+// ----------------------------------------------------------------------------
+// Color scales (1 = dim, 5 = full color)
+// ----------------------------------------------------------------------------
+$blue_1:   mix($blue,   $blue_dim,    0%);
+$blue_2:   mix($blue,   $blue_dim,   25%);
+$blue_3:   mix($blue,   $blue_dim,   50%);
+$blue_4:   mix($blue,   $blue_dim,   75%);
+$blue_5:   mix($blue,   $blue_dim,  100%);
+
+$green_1:  mix($green,  $green_dim,   0%);
+$green_2:  mix($green,  $green_dim,  25%);
+$green_3:  mix($green,  $green_dim,  50%);
+$green_4:  mix($green,  $green_dim,  75%);
+$green_5:  mix($green,  $green_dim, 100%);
+
+$yellow_1: mix($yellow, $yellow_dim,   0%);
+$yellow_2: mix($yellow, $yellow_dim,  25%);
+$yellow_3: mix($yellow, $yellow_dim,  50%);
+$yellow_4: mix($yellow, $yellow_dim,  75%);
 $yellow_5: mix($yellow, $yellow_dim, 100%);
-$orange_1: #ffbe6f;
-$orange_2: #ffa348;
-$orange_3: #ff7800;
-$orange_4: #e66100;
-$orange_5: #c64600;
-$red_1: mix($red, $red_dim, 0%);
-$red_2: mix($red, $red_dim, 25%);
-$red_3: mix($red, $red_dim, 50%);
-$red_4: mix($red, $red_dim, 75%);
-$red_5: mix($red, $red_dim, 100%);
-$purple_1: mix($purple, $purple, 0%);
-$purple_2: mix($purple, $purple, 25%);
-$purple_3: mix($purple, $purple, 50%);
-$purple_4: mix($purple, $purple, 75%);
+
+$orange_1: mix($orange, $orange_dim,   0%);
+$orange_2: mix($orange, $orange_dim,  25%);
+$orange_3: mix($orange, $orange_dim,  50%);
+$orange_4: mix($orange, $orange_dim,  75%);
+$orange_5: mix($orange, $orange_dim, 100%);
+
+$red_1:    mix($red,    $red_dim,     0%);
+$red_2:    mix($red,    $red_dim,    25%);
+$red_3:    mix($red,    $red_dim,    50%);
+$red_4:    mix($red,    $red_dim,    75%);
+$red_5:    mix($red,    $red_dim,   100%);
+
+$purple_1: mix($purple, $purple,   0%);
+$purple_2: mix($purple, $purple,  25%);
+$purple_3: mix($purple, $purple,  50%);
+$purple_4: mix($purple, $purple,  75%);
 $purple_5: mix($purple, $purple, 100%);
+
+// ----------------------------------------------------------------------------
+// Static reference colors (unchanged across themes)
+// ----------------------------------------------------------------------------
 $brown_1: #cdab8f;
 $brown_2: #b5835a;
 $brown_3: #986a44;
