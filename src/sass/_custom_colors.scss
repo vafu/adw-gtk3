@@ -119,7 +119,7 @@ $orange_dim: mix($orange, $bg0, 22%);
 $_text_color: $fg0;
 $_hb_fg_color: $fg0;
 
-$frost: 0.0;
+$frost: 0.0 !default;
 
 $theme_window_bg_color: transparentize($bg0, $frost);
 $theme_window_fg_color: $fg0;

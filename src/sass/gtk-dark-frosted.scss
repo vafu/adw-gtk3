@@ -1,6 +1,7 @@
-// This is the main sass file for the light variant
+// This is the main sass file for the frosted dark variant
 
-@use 'settings' with ($variant: 'light');
+@use 'settings' with ($variant: 'dark');
+@use 'custom_colors' with ($frost: 0.2);
 
 @use 'colors-public';
 @use 'common';
@@ -42,6 +43,3 @@
 @use 'widgets/window';
 @use 'libhandy';
 @use 'libgranite';
-@use 'apps';
-
-@import "accent-color.css";

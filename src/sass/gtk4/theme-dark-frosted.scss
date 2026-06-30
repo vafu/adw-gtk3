@@ -1,0 +1,7 @@
+@use '../settings' with (
+  $variant: 'dark',
+  $toolkit: 'gtk4'
+);
+@use '../custom_colors' with ($frost: 0.2);
+
+@use 'libadwaita-tweaks';
