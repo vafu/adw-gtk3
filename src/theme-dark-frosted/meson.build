@@ -84,3 +84,5 @@ install_data(gtk4_assets_dark_frosted, install_dir: gtk4_asset_dir_dark_frosted)
 # Misc
 install_subdir('../assets', install_dir : gtk3_dir_dark_frosted, strip_directory : false)
 install_data(['../theme-dark/thumbnail-dark.png'], install_dir: gtk3_dir_dark_frosted, rename: ['thumbnail.png'])
+install_symlink('accent-color.css', install_dir:gtk3_dir_dark_frosted, pointing_to: '../../accent-color.css')
+install_symlink('accent-color.css', install_dir:gtk4_dir_dark_frosted, pointing_to: '../../accent-color.css')

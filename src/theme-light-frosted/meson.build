@@ -84,3 +84,4 @@ install_data(gtk4_assets_light_frosted, install_dir: gtk4_asset_dir_light_froste
 # Misc
 install_subdir('../assets', install_dir : gtk3_dir_light_frosted, strip_directory : false)
 install_symlink('accent-color.css', install_dir:gtk3_dir_light_frosted, pointing_to: '../../accent-color.css')
+install_symlink('accent-color.css', install_dir:gtk4_dir_light_frosted, pointing_to: '../../accent-color.css')
